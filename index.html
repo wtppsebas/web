@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Monos, drama y estética</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #f5ffcc, #c8e6c9);
+      color: #1b1b1b;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.6em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 0 #a5d6a7;
+    }
+
+    .sub {
+      margin-top: 10px;
+      font-size: 1.3em;
+      opacity: 0.85;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.75);
+      margin: 30px auto;
+      padding: 22px;
+      width: 85%;
+      max-width: 640px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .card p {
+      font-size: 1.15em;
+      line-height: 1.6em;
+    }
+
+    /* Monos flotando */
+    .mono {
+      position: fixed;
+      bottom: -40px;
+      font-size: 28px;
+      animation: subir 7s linear infinite;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    footer {
+      margin: 40px 0 60px;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>RAZONES POR LAS QUE ODIO A TRIANA</h1>
+  <div class="sub">na mentira no te odio</div>
+
+  <div class="card">
+    <p>
+      te quiero mucho<br>
+      hay que bombardear de abrazos Mendoza
+    </p>
+  </div>
+
+  <footer>
+    monos subiendo porque sí
+  </footer>
+
+  <script>
+    const monos = ['🐒','🐵','🙈','🙉','🙊'];
+    function crearMono() {
+      const m = document.createElement('div');
+      m.className = 'mono';
+      m.textContent = monos[Math.floor(Math.random() * monos.length)];
+      m.style.left = Math.random() * 100 + 'vw';
+      m.style.fontSize = (Math.random() * 24 + 18) + 'px';
+      m.style.animationDuration = (Math.random() * 3 + 5) + 's';
+      document.body.appendChild(m);
+      setTimeout(() => m.remove(), 8000);
+    }
+    setInterval(crearMono, 350);
+  </script>
+
+</body>
+</html>
